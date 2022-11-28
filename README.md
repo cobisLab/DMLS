@@ -72,13 +72,10 @@ cd DMLS/
 4. Download the model from the following link and unzip the file. Please skip it if you have done this step.
 
 ```
-cd main/
-
 wget https://cobis-fs.bme.ncku.edu.tw/DMLS/model.tar.gz
 
 tar zxvf model.tar.gz
 
-cd ..
 ```
 
 5. If this is the first time you use DMLS, run the following command to install the necessary packages. 
