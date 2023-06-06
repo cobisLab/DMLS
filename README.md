@@ -3,7 +3,7 @@
 
 ### Related paper:
 
-Tzu-Hsien Yang\*, Sheng-Hang Wu†, Fang-Yuan Zhang†, Hsiu-Chun Tsai†, Ya-Chiao Yang†, Wei-Sheng Wu\*, An automated pipeline to extract the Drosophila modular transcription regulators and targets from massive literature articles, (Under Review)
+Tzu-Hsien Yang\*, Sheng-Hang Wu†, Fang-Yuan Chang†, Hsiu-Chun Tsai†, Ya-Chiao Yang†, Wei-Sheng Wu\*, "DMLS: an automated pipeline to extract the Drosophila modular transcription regulators and targets from massive literature articles", (Under Review)
 
 ### Ackowledgement
 The software interface is designed following our previous work <a href="https://github.com/cobisLab/YTLR/">YTLR</a>. Therefore, we adopted similar instructions in this README file.  
