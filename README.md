@@ -3,7 +3,7 @@
 
 ### Related paper:
 
-Tzu-Hsien Yang\*, Sheng-Hang Wu†, Fang-Yuan Chang†, Hsiu-Chun Tsai†, Ya-Chiao Yang†, Wei-Sheng Wu\*, "DMLS: an automated pipeline to extract the Drosophila modular transcription regulators and targets from massive literature articles", (Under Review)
+Tzu-Hsien Yang\*, Yu-Huai Yu†, Sheng-Hang Wu†, Fang-Yuan Chang†, Hsiu-Chun Tsai†, Ya-Chiao Yang†, Wei-Sheng Wu\*, "DMLS: an automated pipeline to extract the Drosophila modular transcription regulators and targets from massive literature articles"
 
 ### Ackowledgement
 The software interface is designed following our previous work <a href="https://github.com/cobisLab/YTLR/">YTLR</a>. Therefore, we adopted similar instructions in this README file.  
@@ -157,9 +157,9 @@ python main.py -i <path to input directory> -check <0/1> -download <0/1> -o <pat
 
 **Notice!**
 
-***It may take a while (generally, half an hour to several hours, depending on the network bandwidth and the number of articles given) to download the full texts using the PMC ftp services due to its file package structures. We do not suggest using wifi connections for this automated script since the download process may break in wifi transmissions.***
+***It may take a while (generally, half an hour to several hours, depending on the network bandwidth and the number of articles given) to download the full texts using the PMC ftp services due to its file package structures. We do not suggest using wifi connections for this automated script since the download process may break in wifi transmissions.
 
-***And due to the restriction of the term usage of the PMC ftp services, only part of the full texts in PMC can be downloaded via this service. Those articles that cannot be downloaded through the PMC ftp services may require an additional PMC website "Save as..." action for each of them. ***
+Due to the restriction of the term usage of the PMC ftp services, only part of the full texts in PMC can be downloaded via this service. Those articles that cannot be downloaded through the PMC ftp services may require an additional PMC website "Save as..." action for each of them. ***
 
 ## Example and Output Results
 
@@ -169,7 +169,7 @@ If we use the example inputs with the example command:
 python main.py -i ./sample_input -check 1 -o CRM_output
 ```
 
-The results will be generated in the CRM_output folder.
+The results will be generated in the *CRM_output* folder.
 
 **SAMPLE OUTPUTS**
 
@@ -232,16 +232,40 @@ PMID	PMCID	Abstract
 >* PMCID: PubMed Central ID of the article.
 >* Abstract: Abstract of the paper.
 
-### **DMLS Step 3 and Step 4 Outputs**
+### **DMLS Step 2 & 3 Outputs**
 
 DMLS Step 3 and Step 4 outputs contain the following: 
 
 ```
-CRM_output/CRM_target_gene_summary.tsv
-CRM_output/CRM_TF_summary.tsv
 CRM_ouptut/details/CRM_target_gene_details.tsv
 CRM_ouptut/details/CRM_TF_details.tsv
 CRM_ouptut/download_xml/
+```
+The *download_xml* folder contains the downloaded full texts of the CRM-related articles. 
+
+The target gene and TF role labelings of the gene-name-containing paragraphs are provided in the files *CRM\_{target\_gene}\_details.tsv* and *CRM\_TF\_details.tsv*, respectively.
+
+eg. CRM\_ouptut/details/CRM\_target\_gene\_details.tsv
+
+```
+PMID	FBID	Synonym	Paragraph
+28760811	FBgn0001320	XXXX
+```
+
+>**Column descriptions:**
+
+>* PMID: PubMed ID of the article.
+>* Fbid: Fbid of target gene/regulatory TF alias found in the sentence.
+>* Symonym: Target gene/regulatory TF aliases.
+>* Paragraph: The gene-name containing paragraphs that are role-labeled to describe target genes (in *CRM\_{target\_gene}\_details.tsv*) or TFs (in *CRM\_TF\_details.tsv*).
+
+### **DMLS Step 4 Outputs**
+
+DMLS Step 4 extracts the described target gene and TF lists of the CRMs under study for each CRM-related article. The files includes the following: 
+
+```
+CRM_output/CRM_target_gene_summary.tsv
+CRM_output/CRM_TF_summary.tsv
 ```
 
 eg.  CRM\_ouptut/CRM\_target\_gene\_summary.tsv
@@ -260,18 +284,3 @@ Pmid	FBID	All_synonym
 >* FBID: Fbid of the target gene/regulatory TF alias found in the article.
 >* All_synonym: The aliases of the target gene/regulatory TF.
 
-You can find the detailed sentence descriptions in the file named CRM\_{target\_gene/TF}\_details.tsv.
-
-eg. CRM\_ouptut/details/CRM\_target\_gene\_details.tsv
-
-```
-PMID	FBID	Synonym	Sentence
-28760811	FBgn0001320	KNIRPS	Here, we analyse the mechanisms generating the domain of knirps expression in the presumptive L2 vein of the wing imaginal disc.
-```
-
->**Column descriptions:**
-
->* PMID: PubMed ID of the article.
->* Fbid: Fbid of target gene/regulatory TF alias found in the sentence.
->* Symonym: Target gene/regulatory TF alias.
->* Sentence: Sentence descriptions for the target gene/regulatory TF found in the article that supports the evidence.
