@@ -234,7 +234,9 @@ PMID	PMCID	Abstract
 
 ### **DMLS Step 2 & 3 Outputs**
 
-DMLS Step 3 and Step 4 outputs contain the following: 
+DMLS Step 2 downloads the full texts of the CRM-related articles. And DMLS Step 3 comprehends the gene-name-containing paragraphs and figures out the described roles (target genes or TFs) of the mentioned genes. Therefore, the results of DMLS Step 3 are in the form of (PMID, gene name, **paragraph**, target gene/TF labels).
+
+The overall outputs contain the following: 
 
 ```
 CRM_ouptut/details/CRM_target_gene_details.tsv
@@ -261,7 +263,7 @@ PMID	FBID	Synonym	Paragraph
 
 ### **DMLS Step 4 Outputs**
 
-DMLS Step 4 extracts the described target gene and TF lists of the CRMs under study for each CRM-related article. The files includes the following: 
+DMLS Step 4 extracts the described target gene and TF lists of the CRMs under study for each CRM-related article. These outpus are of the form (PMID, gene name, target gene/TF labels). The files includes the following: 
 
 ```
 CRM_output/CRM_target_gene_summary.tsv
