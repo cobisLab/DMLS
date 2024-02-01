@@ -249,9 +249,12 @@ The target gene and TF role labelings of the gene-name-containing paragraphs are
 
 eg. CRM\_ouptut/details/CRM\_target\_gene\_details.tsv
 
+Some sample content in this file:
+
 ```
 PMID	FBID	Synonym	Paragraph
-28760811	FBgn0001320	XXXX
+24945799	FBgn0001320	KNI		The gap gene kni is known for its role in embryonic segmentation patterning and development of the trachea and wing vein [47][51] similar to vvl. Kni is a nuclear receptor with a zinc-finger motif that is unlikely to be ligand activated since it lacks a ligand-binding domain. Our data show that Kni is required for expression of the genes involved in ecdysone biosynthesis in the PG, suggesting that Kni functions as an activator in this situation. Although Kni is generally considered a short-range repressor [52], it is required to activate hairy expression in stripe 6 during embryogenesis [53]. Thus, Kni may act either as a repressor or as an activator in a context-dependent manner. In mammals, nuclear receptors are also key regulators of steroidogenic target genes encoding P450 enzymes [54][56].
+...
 ```
 
 >**Column descriptions:**
@@ -272,12 +275,12 @@ CRM_output/CRM_TF_summary.tsv
 
 eg.  CRM\_ouptut/CRM\_target\_gene\_summary.tsv
 
-```
-Pmid	FBID	All_synonym
-28760811	FBgn0001320	KNIRPS
-28126841	FBgn0020307	DEFECTIVE PROVENTRICULUS|DVE
-24945799	FBgn0086917	SPOOKIER|SPOK
+Some sample content in this file:
 
+```
+Pmid	FBID	All_synonym	Confidence
+24945799	FBgn0001320	KNI	0.9945766
+...
 ```
 
 >**Column descriptions:**
